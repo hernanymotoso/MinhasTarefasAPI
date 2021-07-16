@@ -1,17 +1,22 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MinhasTarefasAPI.Models
 {
     public class Tarefa
     {
-        public int Id { get; set; }
+        [Key] 
+        public int IdTarefaApi { get; set; }
+
+        public int IdTarefaApp { get; set; }
         public string Titulo { get; set; }
         public DateTime DataHora { get; set; }
         public string Local { get; set; }
         public string Descricao { get; set; }
         public string Tipo { get; set; }
         public bool Concluido { get; set; }
+        public bool Excluido { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
 
